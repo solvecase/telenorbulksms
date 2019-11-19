@@ -1,0 +1,44 @@
+{
+    "name": "solvecase/telenorbulksms",
+    "description": "This package makes it easy to send sms notification using Telenor Myanmar Business SMS service with laravel.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "SolveCase",
+            "email": "support@solvecase.com",
+            "homepage": "http://www.solvecase.com"
+        }
+    ],
+    "homepage": "https://github.com/solvecase/telenorbulksms",
+    "keywords": ["laravel", "telenor", "myanmar", "sms"],
+    "require": {
+        "php": "^7.1",
+        "guzzlehttp/guzzle": "^6.4",
+        "illuminate/notifications": "^5.5 || ^6.0",
+        "illuminate/support": "^5.5 || ^6.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.0",
+        "phpunit/phpunit": "^7.0 || ^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SolveCase\\TelenorBulkSms\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SolveCase\\TelenorBulkSms\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SolveCase\\TelenorBulkSms\\TelenorBulkSmsServiceProvider"
+            ],
+            "aliases": {
+                "TelenorBulkSms": "SolveCase\\TelenorBulkSms\\Facades\\TelenorBulkSms"
+            }
+        }
+    }
+}
