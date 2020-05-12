@@ -127,6 +127,13 @@ class SmsController extends Controller{
 }
 
 ```
+
+##### On-Demand Notifications
+Sometimes you may need to send a notification to someone who is not stored as a "user" of your application. Using the Notification::route method, you may specify ad-hoc notification routing information before sending the notification:
+```php
+Notification::route('telenorbulksms', '09111111')                      
+            ->notify(new InvoicePaid($invoice));
+```
 ## Change log
 
 Please see the [changelog](changelog.md) for more information on what has changed recently.

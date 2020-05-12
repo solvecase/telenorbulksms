@@ -2,10 +2,14 @@
 
 namespace SolveCase\TelenorBulkSms;
 
+use Illuminate\Notifications\ChannelManager;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
 use GuzzleHttp\Client as HttpClient;
 use SolveCase\TelenorBulkSms\Console\Commands\AuthorizeTelenorCommand;
+use Illuminate\Support\Facades\Notification;
+use SolveCase\TelenorBulkSms\TelenorSmsClient;
+use SolveCase\TelenorBulkSms\TelenorSmsChannel;
 
 class TelenorBulkSmsServiceProvider extends ServiceProvider
 {
@@ -62,6 +66,12 @@ class TelenorBulkSmsServiceProvider extends ServiceProvider
         // Register the service the package provides.
         $this->app->singleton('telenorbulksms', function ($app) {
             return new TelenorBulkSms;
+        });
+
+        Notification::resolved(function (ChannelManager $service) {
+            $service->extend('telenorbulksms', function ($app) {
+                return new TelenorSmsChannel($app[TelenorSmsClient::class]);
+            });
         });
     }
 
