@@ -2,6 +2,7 @@
 
 namespace SolveCase\TelenorBulkSms;
 
+use Illuminate\Support\Facades\Artisan;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\RequestException;
@@ -24,6 +25,7 @@ class TelenorSmsClient
     public function send($params){
         $token = Cache::get('telenorsms_access_token');
         if(empty($token)){
+            Artisan::call('telenorbulksms:auth');
             throw new \Exception('Telenor Sms Token cannot be empty.');
         }
 

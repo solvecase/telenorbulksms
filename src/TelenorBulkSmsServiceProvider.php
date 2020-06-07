@@ -69,7 +69,7 @@ class TelenorBulkSmsServiceProvider extends ServiceProvider
         });
 
         Notification::resolved(function (ChannelManager $service) {
-            $service->extend('telenorbulksms', function ($app) {
+            $service->extend('telenorsms', function ($app) {
                 return new TelenorSmsChannel($app[TelenorSmsClient::class]);
             });
         });

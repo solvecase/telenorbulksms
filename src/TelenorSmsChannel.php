@@ -19,7 +19,7 @@ class TelenorSmsChannel {
         }
         if($message->toNotGiven()){
             if(!$to = $notificable->routeNotificationFor('telenorsms')){
-                throw new \Exception('Reciver cannot be null.');
+                throw new \Exception('Receiver cannot be null.');
             }
             $message->to($to);
         }
