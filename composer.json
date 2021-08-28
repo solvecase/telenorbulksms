@@ -12,8 +12,8 @@
     "homepage": "https://github.com/solvecase/telenorbulksms",
     "keywords": ["laravel", "telenor", "myanmar", "sms"],
     "require": {
-        "php": "^7.1",
-        "guzzlehttp/guzzle": "^6.4",
+        "php": "^7.1|^8.0",
+        "guzzlehttp/guzzle": "~6|~7",
         "illuminate/notifications": "~5|~6|~7|~8",
         "illuminate/support": "~5|~6|~7|~8"
     },
