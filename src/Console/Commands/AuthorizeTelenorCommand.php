@@ -5,7 +5,6 @@ namespace SolveCase\TelenorBulkSms\Console\Commands;
 use Illuminate\Console\Command;
 
 use GuzzleHttp\Client as HttpClient;
-use GuzzleHttp\Exception\GuzzleException;
 
 class AuthorizeTelenorCommand extends Command
 {

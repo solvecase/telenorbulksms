@@ -93,9 +93,9 @@ class TelenorBulkSmsServiceProvider extends ServiceProvider
     protected function bootForConsole()
     {
         // Publishing the configuration file.
-        $this->publishes([
-            __DIR__.'/../config/telenorbulksms.php' => config_path('telenorbulksms.php'),
-        ], 'telenorbulksms.config');
+        // $this->publishes([
+        //     __DIR__.'/../config/telenorbulksms.php' => config_path('telenorbulksms.php'),
+        // ], 'telenorbulksms');
 
         // Publishing the views.
         /*$this->publishes([

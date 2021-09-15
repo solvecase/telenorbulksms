@@ -15,6 +15,7 @@ $ composer require solvecase/telenorbulksms
 Open up .env file and add the following:
 
     TELENOR_API_BASE_URL=https://prod-apigw.mytelenor.com.mm/
+    TELENOR_SMS_ENABLED=true
     TELENOR_SMS_CALLBACK_URL=oauth2/telenorsms/callback
     TELENOR_SMS_CLIENT_ID=
     TELENOR_SMS_CLIENT_SECRET=

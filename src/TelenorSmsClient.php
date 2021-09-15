@@ -4,9 +4,6 @@ namespace SolveCase\TelenorBulkSms;
 
 use Illuminate\Support\Facades\Artisan;
 use GuzzleHttp\Client as HttpClient;
-use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Exception\ServerException;
 use Cache;
 
 class TelenorSmsClient

@@ -10,7 +10,9 @@ class Kernel extends ConsoleKernel{
     protected function schedule(Schedule $schedule)
     {
         parent::schedule($schedule);
-        $schedule->command('telenorbulksms:auth')->hourly();
+        if (config('telenorbulksms.sms.enabled')) {
+            $schedule->command('telenorbulksms:auth')->hourly();   
+        }
     }
 
 }

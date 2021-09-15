@@ -4,6 +4,7 @@ return [
     'base_url' => env('TELENOR_API_BASE_URL', 'http://sandbox-apigw.mytelenor.com.mm/'),
     
     'sms' => [
+        'enabled' => env('TELENOR_SMS_ENABLED', true),
         'callback_url' => env('TELENOR_SMS_CALLBACK_URL', 'oauth2/telenorsms/callback'),
         'client_id' => env('TELENOR_SMS_CLIENT_ID', ''),
         'client_secret' => env('TELENOR_SMS_CLIENT_SECRET', ''),
