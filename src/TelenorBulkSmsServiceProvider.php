@@ -57,12 +57,6 @@ class TelenorBulkSmsServiceProvider extends ServiceProvider
         });
         $this->commands($this->commands);
 
-        $this->app->singleton('solvecase.telenorbulksms.console.kernel', function($app){
-            $dispatcher = $app->make(\Illuminate\Contracts\Events\Dispatcher::class);
-            return new \SolveCase\TelenorBulkSms\Console\Kernel($app, $dispatcher);
-        });
-        $this->app->make('solvecase.telenorbulksms.console.kernel');
-
         // Register the service the package provides.
         $this->app->singleton('telenorbulksms', function ($app) {
             return new TelenorBulkSms;

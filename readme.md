@@ -23,6 +23,13 @@ Open up .env file and add the following:
     TELENOR_SMS_USERNAME=
     TELENOR_SMS_PASSWORD=
 
+Open up app/Console/Kernel.php and add schedule
+```php
+if (config('telenorbulksms.sms.enabled')) {
+    $schedule->command('telenorbulksms:auth')->hourly();   
+}
+```
+
 Open up *config/app.php* and find the providers key.
 
 ```php
